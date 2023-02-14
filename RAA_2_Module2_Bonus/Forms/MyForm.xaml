@@ -1,0 +1,36 @@
+﻿<Window x:Class="RAA_2_Module2_Bonus.MyForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAA_2_Module2_Bonus"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="450">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Label Content="Batch Type Parameter Setter" Grid.Row="0" FontWeight="Bold" FontSize="24"/>
+        <Label Content="Select a Category" Grid.Row="1"/>
+        <ComboBox x:Name="cmbCategory" Grid.Row="2" SelectionChanged="cmbCategory_SelectionChanged"/>
+        <Label Content="Select Types:" Grid.Row="3"/>
+        <ListBox x:Name="lbxTypes" Grid.Row="4" SelectionMode="Extended" SelectionChanged="lbxTypes_SelectionChanged"/>
+        <Label Content="Select a Parameter:" Grid.Row="5"/>
+        <ComboBox x:Name="cmbParameter" Grid.Row="6" SelectionChanged="cmbParameter_SelectionChanged"/>
+        <Label x:Name="lblValue" Content="Set Parameter Value:" Grid.Row="7"/>
+        <TextBox x:Name="tbxValue" Grid.Row="8"/>
+        <StackPanel Grid.Row="9" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button x:Name="btnOK" Content="OK" Height="25" Width="90" Margin="0,0,10,0" Click="btnOK_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" Height="25" Width="90" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
