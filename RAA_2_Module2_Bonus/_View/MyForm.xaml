@@ -21,11 +21,19 @@
         </Grid.RowDefinitions>
         <Label Content="Batch Type Parameter Setter" Grid.Row="0" FontWeight="Bold" FontSize="24"/>
         <Label Content="Select a Category" Grid.Row="1"/>
-        <ComboBox x:Name="cmbCategory" Grid.Row="2" SelectionChanged="cmbCategory_SelectionChanged"/>
+        <ComboBox x:Name="cmbCategory" Grid.Row="2" SelectionChanged="cmbCategory_SelectionChanged"
+                  ItemsSource="{Binding CatList}"
+                  DisplayMemberPath="Name"
+                  SelectedValue="{Binding SelectedCategory}"/>
         <Label Content="Select Types:" Grid.Row="3"/>
-        <ListBox x:Name="lbxTypes" Grid.Row="4" SelectionMode="Extended" SelectionChanged="lbxTypes_SelectionChanged"/>
+        <ListBox x:Name="lbxTypes" Grid.Row="4" SelectionMode="Extended" SelectionChanged="lbxTypes_SelectionChanged"
+                 ItemsSource="{Binding ElemTypeList}"
+                 DisplayMemberPath="Name"/>
         <Label Content="Select a Parameter:" Grid.Row="5"/>
-        <ComboBox x:Name="cmbParameter" Grid.Row="6" SelectionChanged="cmbParameter_SelectionChanged"/>
+        <ComboBox x:Name="cmbParameter" Grid.Row="6" SelectionChanged="cmbParameter_SelectionChanged"
+                  ItemsSource="{Binding ParamList}"
+                  DisplayMemberPath="Definition.Name"
+                  SelectedValue="{Binding SelectedParam}"/>
         <Label x:Name="lblValue" Content="Set Parameter Value:" Grid.Row="7"/>
         <TextBox x:Name="tbxValue" Grid.Row="8"/>
         <StackPanel Grid.Row="9" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
