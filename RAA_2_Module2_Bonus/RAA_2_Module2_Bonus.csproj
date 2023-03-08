@@ -67,9 +67,11 @@
     <Compile Include="Utils\CommandAvailability.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Utils.cs" />
-    <Compile Include="Forms\MyForm.xaml.cs">
+    <Compile Include="_ViewModel\ViewModel.cs" />
+    <Compile Include="_View\MyForm.xaml.cs">
       <DependentUpon>MyForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_Model\DocModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="RAA_2_Module2_Bonus.addin" />
@@ -83,7 +85,7 @@
     <EmbeddedResource Include="Resources\Blue_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Forms\MyForm.xaml">
+    <Page Include="_View\MyForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,6 +96,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if exist "$(AppData)\Autodesk\REVIT\Addins\2022" copy "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2022"
